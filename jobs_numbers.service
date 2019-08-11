@@ -7,7 +7,7 @@ User=sammy
 Group=www-data
 WorkingDirectory=/root/jobs-numbers-website
 Environment="PATH=/root/jobs_numbers/bin"
-ExecStart=/home/sammy/myproject/myprojectenv/bin/uwsgi --ini jobs_numbers.ini
+ExecStart=/root/jobs_numbers/bin/uwsgi --ini jobs_numbers.ini
 
 [Install]
 WantedBy=multi-user.target
