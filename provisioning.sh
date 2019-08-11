@@ -33,7 +33,7 @@ sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev p
 sudo apt install python3-venv
 
 python3.6 -m venv jobs_numbers
-source myprojectenv/bin/activate
+source jobs_numbers/bin/activate
 pip install wheel
 pip install -r requirements.txt
 pip install uwsgi

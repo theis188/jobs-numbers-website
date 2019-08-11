@@ -117,4 +117,4 @@ def route_sitemap():
     return send_from_directory(app.static_folder, 'sitemap.xml')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80)
+    app.run(debug=True, port=5000)
