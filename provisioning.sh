@@ -17,14 +17,22 @@ pip install -r requirements.txt
 sudo apt update
 sudo apt install nginx
 
-# sudo systemctl stop nginx
+sudo systemctl stop nginx
 # sudo systemctl start nginx
 # sudo systemctl restart nginx
 
 ########## 
 
+sudo apt install ufw
+# sudo ufw default deny incoming
+# sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow 5000
+##########
+
 # sudo apt update
 sudo apt install redis-server
+redis-cli KEYS *
 sudo systemctl restart redis.service
 
 #########
