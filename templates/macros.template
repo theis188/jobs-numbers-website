@@ -1,0 +1,52 @@
+
+
+{% macro render_table(x_values, y_values, x_title, y_title) -%}
+    <table>
+        <tr>
+            <th>{{x_title}}</th>
+            <th>{{y_title}}</th>
+        </tr>
+        {% for xi,yi in zip(x_values,y_values) %}
+            <tr>
+                <td>{{xi}}</td>
+                <td>{{comma_format(yi)}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{%- endmacro %}
+
+{% macro render_occ(occ, render_flag=False, loop_index=0, location_name='') -%}
+    {% if occ.url %}
+        <a href="{{occ.url|replace('www.jobs-numbers.com/','')}}">
+            <h3>{{occ.name}}</h3>
+        </a>
+    {% else %}
+        {% set name_slug = slugify(occ.name) %}
+        <a name="{{name_slug}}"></a>
+        <a href="#{{name_slug}}">
+            <h3>{{occ.name}}</h3>
+        </a>        
+    {% endif %}
+    {% if render_flag %}
+        {% if occ.x_data|length > 5 %}
+        {{render_chart(occ, loop_index, location_name=location_name)}}
+        {% endif %}
+    {% endif %}
+    {{ render_table(occ.x_data,occ.y_data,'Year','Number') }}
+{%- endmacro %}
+
+{% macro render_chart(occ,loop_index,location_name='') -%}
+    <div>
+        <canvas id="canvas_{{loop_index}}"></canvas>
+    </div>
+    <script>
+            var x_data=[
+                {%- for x_datum in occ.x_data -%}{{x_datum}},{%- endfor -%}
+            ];
+            var y_data=[
+                {%- for y_datum in occ.y_data -%}{{y_datum}},{%- endfor -%}
+            ];
+            var plotData = new PlotDataHolder(x_data, y_data, '{{occ.name}}', '{{location_name}}', 'canvas_{{loop_index}}');
+            addPlot(plotData);
+    </script>
+{%- endmacro %}

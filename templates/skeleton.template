@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145394817-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145394817-1');
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="static/style.css">
+<script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+<script src="/js/scripts.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% block extrahead %}
+{% endblock %}
+</head>
+
+<main>
+    <body>
+        <div class="header">
+            <a href="/" class="logo">Jobs-Numbers.com</a>
+            <div class="header-right">
+                <a id="head-home" href="/">Home</a>
+                <a id="head-contact" href="/contact.html">Contact</a>
+                <a id="head-about" href="/about.html">About</a>
+            </div>
+        </div>
+        <script>
+            var activeDict = {
+                "/":"head-home",
+                "/contact.html":"head-contact",
+                "/about.html":"head-about",
+            }
+            var url = window.location.pathname            
+            if (url in activeDict) {
+                elementId = activeDict[url]
+                document.getElementById(elementId).setAttribute('class','active')
+            }
+        </script>
+        <div id="article-content">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</main>
+
+</html>

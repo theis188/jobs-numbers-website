@@ -1,0 +1,25 @@
+{% extends "skeleton.template" %}
+
+{% block body %}
+
+<div>
+    <h1>About Jobs-Numbers.com</h1>
+</div>
+
+<div>
+    <p>
+        Jobs-Numbers.com exists to showcase the great work of the people at the U.S. Bureau of Labor Statistics (BLS). The BLS program for Occupational Employment Statistics (OES) collects a large amount of data on the numbers of jobs in roughly 1,000 occupational categories.
+    </p>
+</div>
+
+<div>
+    <a href="https://www.bls.gov/oes/">Link: Bureau of Labor Statistics; Occupational Employment Statistics</a>
+</div>
+
+<div>
+    <p>
+        This website is based on the <a href="https://github.com/theis188/us-jobs-data">US Jobs Data Project</a>. This project provides an interface for BLS OES data which normalizes and stores the data into a relational SQLite database flat file.
+    </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "skeleton.template" %}
+
+{% import "macros.template" as macros with context %}
+
+{% block extrahead %}
+
+<title>Occupation Statistics For {{title}} | jobs-numbers.com</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <h1>Numbers of jobs in {{title}}</h1>
+    
+    {% for datum in data %}
+        <div>
+            {{ macros.render_occ(datum, render_flag=True, loop_index=loop.index, location_name=title) }}
+        </div>
+    {% endfor %}
+
+{% endblock %}

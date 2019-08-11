@@ -1,0 +1,21 @@
+{% extends "skeleton.template" %}
+
+{% block body %}
+
+<div>
+    <h1>About Jobs-Numbers.com</h1>
+</div>
+
+<div>
+    <p>
+        This website is a project of Matthew Theisen <a href="https://www.matthewtheisen.com/">(Personal Website)</a> <a href="https://twitter.com/RealTheisen">(Twitter)</a>.
+    </p>
+</div>
+
+<div>
+    <p>
+        Please DM if you have any questions or would like to report an error.
+    </p>
+</div>
+
+{% endblock %}

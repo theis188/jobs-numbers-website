@@ -1,0 +1,40 @@
+{% extends "skeleton.template" %}
+
+{% import "macros.template" as macros with context %}
+
+{% block extrahead %}
+
+<title>All locations</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <h2>All states/territories</h2>
+
+    <ul>
+        {% for state in state_links %}
+            <li>
+                <a href="{{state.url|replace('www.jobs-numbers.com/','')}}">
+                    <span>{{state.name}}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Occupation Groups</h2>
+
+    <ul>
+        {% for occ in occupation_links %}
+            <li>
+                <a href="{{occ.url|replace('www.jobs-numbers.com/','')}}">
+                    <span>{{occ.name}}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</main>
+</body>
+
+{% endblock %}

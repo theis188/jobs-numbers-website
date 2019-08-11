@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Line Chart</title>
+	<script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+	<style>
+	canvas{
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div style="width:75%;">
+		<canvas id="canvas"></canvas>
+	</div>
+	<br>
+	<br>
+	<script>
+
+		var x_data = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]
+		var x_data_str = x_data.map(String)
+		var y_data = [721270.0, 730490.0, 734490.0, 755620.0, 763430.0, 789360.0, 798640.0, 819480.0, 800390.0, 777560.0, 777640.0, 773860.0, 783980.0, 788000.0, 798150.0, 805440.0, 801080.0, 811680.0,]
+		var config = {
+			type: 'line',
+			data: {
+				labels: x_data_str,
+				datasets: [{
+					label: 'My First dataset',
+					backgroundColor: '#FF0000',
+					borderColor: '#FF0000',
+					data: y_data,
+					fill: false,
+				} ]
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					text: 'Chart.js Line Chart'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Value'
+						}
+					}]
+				}
+			}
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+		};
+
+	</script>
+</body>
+
+</html>

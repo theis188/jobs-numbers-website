@@ -1,0 +1,37 @@
+{% extends "skeleton.template" %}
+
+{% import "macros.template" as macros with context %}
+
+{% block extrahead %}
+
+<title>{{title}}</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <h1>Numbers of jobs in {{title}}</h2>
+
+    {% for datum in data %}
+        <div>
+            {% if loop.index >= 1 %}
+                {{macros.render_occ(datum, True, loop.index, location_name=title)}}
+            {% else %}
+                <span>{{macros.render_occ(datum, False)}}</span>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <h2>Metro Areas in {{title}}</h2>
+
+    <ul>
+        {% for metro in metros %}
+            <li>
+                <a href="{{metro.url|replace('www.jobs-numbers.com/','')}}">
+                    <span>{{metro.name}}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

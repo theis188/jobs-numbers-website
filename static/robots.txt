@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.jobs-numbers.com/sitemaps/sitemap.xml
