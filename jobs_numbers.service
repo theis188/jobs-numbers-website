@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=sammy
 Group=www-data
-WorkingDirectory=/home/sammy/myproject
-Environment="PATH=/home/sammy/myproject/myprojectenv/bin"
-ExecStart=/home/sammy/myproject/myprojectenv/bin/uwsgi --ini myproject.ini
+WorkingDirectory=/root/jobs-numbers-website
+Environment="PATH=/root/jobs_numbers/bin"
+ExecStart=/home/sammy/myproject/myprojectenv/bin/uwsgi --ini jobs_numbers.ini
 
 [Install]
 WantedBy=multi-user.target

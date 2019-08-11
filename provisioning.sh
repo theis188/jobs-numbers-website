@@ -46,6 +46,7 @@ pip install wheel
 pip install -r requirements.txt
 pip install uwsgi
 
+cp jobs_numbers.service /etc/systemd/system/jobs_numbers.service
 #########
 
 cp -r static /var/www/html
