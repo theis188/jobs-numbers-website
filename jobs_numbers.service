@@ -1,9 +1,9 @@
 [Unit]
-Description=uWSGI instance to serve myproject
+Description=uWSGI instance to serve jobs_numbers
 After=network.target
 
 [Service]
-User=sammy
+User=root
 Group=www-data
 WorkingDirectory=/root/jobs-numbers-website
 Environment="PATH=/root/jobs_numbers/bin"

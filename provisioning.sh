@@ -47,6 +47,10 @@ pip install -r requirements.txt
 pip install uwsgi
 
 cp jobs_numbers.service /etc/systemd/system/jobs_numbers.service
+sudo systemctl start jobs_numbers
+sudo systemctl enable jobs_numbers
+sudo systemctl status jobs_numbers
+
 #########
 
 cp -r static /var/www/html
