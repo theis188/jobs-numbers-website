@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    server_name jobs-numbers www.jobs-numbers;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/root/jobs-numbers-website/myproject.sock;
+    }
+}

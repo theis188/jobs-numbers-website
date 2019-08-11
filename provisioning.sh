@@ -47,9 +47,16 @@ pip install -r requirements.txt
 pip install uwsgi
 
 cp jobs_numbers.service /etc/systemd/system/jobs_numbers.service
+
 sudo systemctl start jobs_numbers
 sudo systemctl enable jobs_numbers
 sudo systemctl status jobs_numbers
+
+systemctl daemon-reload
+
+cp nginx-conf.txt /etc/nginx/sites-available/jobs_numbers
+sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+sudo nginx -t
 
 #########
 
