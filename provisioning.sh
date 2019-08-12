@@ -51,12 +51,17 @@ cp jobs_numbers.service /etc/systemd/system/jobs_numbers.service
 sudo systemctl start jobs_numbers
 sudo systemctl enable jobs_numbers
 sudo systemctl status jobs_numbers
+sudo systemctl stop jobs_numbers
 
 systemctl daemon-reload
 
 cp nginx_conf.txt /etc/nginx/sites-available/jobs_numbers
 sudo ln -s /etc/nginx/sites-available/jobs_numbers /etc/nginx/sites-enabled
+
+sudo systemctl restart nginx
+
 sudo nginx -t
+
 
 #########
 
