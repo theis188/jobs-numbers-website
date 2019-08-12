@@ -54,8 +54,8 @@ sudo systemctl status jobs_numbers
 
 systemctl daemon-reload
 
-cp nginx-conf.txt /etc/nginx/sites-available/jobs_numbers
-sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+cp nginx_conf.txt /etc/nginx/sites-available/jobs_numbers
+sudo ln -s /etc/nginx/sites-available/jobs_numbers /etc/nginx/sites-enabled
 sudo nginx -t
 
 #########
