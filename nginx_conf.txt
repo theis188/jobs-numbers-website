@@ -1,6 +1,6 @@
 server {
     listen 80 default_server;
-    server_name jobs-numbers www.jobs-numbers;
+    server_name jobs-numbers.com www.jobs-numbers.com;
 
     location / {
         include uwsgi_params;
