@@ -116,5 +116,9 @@ def home():
 def route_sitemap():
     return send_from_directory(app.static_folder, 'sitemap.xml')
 
+@app.route('/robots.txt')
+def route_sitemap():
+    return send_from_directory(app.static_folder, 'robots.txt')
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
